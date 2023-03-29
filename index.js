@@ -2,6 +2,7 @@ require("dotenv").config()
 const { browserConfig } = require("./config");
 const { saveData } = require("./fs");
 const { getRecommended, navigate } = require("./utils");
+const sendMessage = require("./utils/telegram_bot");
 
 (async () => {
   // Browser config
@@ -24,6 +25,9 @@ const { getRecommended, navigate } = require("./utils");
 
   // Save data to json file in data folder.
   await saveData(recommended, "recommended");
+
+  // Send json data to telegram bot.
+  await sendMessage(JSON.stringify(recommended));
 
   // Close browser
   await browser.close();

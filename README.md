@@ -28,6 +28,9 @@ pnpm start
 
 - `URL`: The URL to scrape.
 - `SELECTOR`: The CSS selector to use to get the channels.
+- `BASE_URL`: The base URL to use to send the results.
+- `ID_BOT`: The ID of the bot from Telegram.
+- `ID_USER`: The ID of the user to use to send the results to Telegram.
 
 ### Dependencies
 
